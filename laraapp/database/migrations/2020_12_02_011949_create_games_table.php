@@ -15,13 +15,13 @@ class CreateGamesTable extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->string('image');
+            $table->text('name');
+            $table->string('image')->default('imgs/no-games.png');
             $table->text('description');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('user_id')->references('id')->on ('users');            
+            $table->unsignedBigInteger('category_id');        
+            $table->foreign('category_id')->references('id')->on ('categories');
             $table->boolean('slider');
             $table->float('price');
             $table->timestamps();
