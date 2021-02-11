@@ -23,6 +23,23 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
+            'gender' => $this->faker->randomElement(['male', 'female']),
+            'fullname' => function (array $user) {
+                return $this->faker->name($user['gender']);
+            },
+            'email'             => $this->faker->unique()->safeEmail,
+            'phone'             => $this->faker->numberBetween($min = 3101000000, $max=3202000000),
+            'birthdate'         => $this->faker->dateTimeBetween($startDate = '-14609 days', $endDate = '1999-12-31', $timezone = null),
+            'photo'             => $this->faker->image($dir = 'public\imgs', $width = 640, $height = 480,'photo profile'),
+            'address'           => $this->faker->streetAddress,
+            'role'              => 'Editor',
+            'email_verified_at' => now(),
+            'password'          => bcrypt('editor'), 
+            'remember_token'    => Str::random(10),
+        ];
+        /*
+        //Funciona pero no identifica genero
+        return [
             'fullname'          => $this->faker->name,
             'email'             => $this->faker->unique()->safeEmail,
             'phone'             => $this->faker->randomNumber($nbDigits = NULL, $strict = false),
@@ -33,6 +50,6 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password'          => bcrypt('editor'), 
             'remember_token'    => Str::random(10),
-        ];
+        ];*/
     }
 }
