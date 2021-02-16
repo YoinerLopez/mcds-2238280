@@ -14,4 +14,7 @@ class Category extends Model
         'image',
         'description',//esta coma se puede dejar o quitar
     ];
+    public function games() {
+        return $this->hasMany('App\Models\Game');
+    }
 }

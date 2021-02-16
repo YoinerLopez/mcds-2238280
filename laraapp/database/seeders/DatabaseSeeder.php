@@ -20,6 +20,6 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             GameSeeder::class
         ]);
-        User::factory(5)->create();
+        User::factory(100)->create();
     }
 }
