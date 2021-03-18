@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Game;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use \App\Models\Game;
+
 class GameSeeder extends Seeder
 {
     /**
@@ -14,7 +15,7 @@ class GameSeeder extends Seeder
      */
     public function run()
     {
-        
+        // Metodo Insert
         DB::table('games')->insert([
             'name'        => "Luigi's Mansion 3",
             'description' => "Luigi's Mansion 3 es un videojuego de acción-aventura desarrollado por Next Level Games y publicado por Nintendo para Nintendo Switch.",
@@ -23,6 +24,7 @@ class GameSeeder extends Seeder
             'slider'      => 1,
             'price'       => 59
         ]);
+
         // Metodo ORM
         $gm = new Game;
         $gm->name        = 'Halo Infinite';
@@ -32,6 +34,7 @@ class GameSeeder extends Seeder
         $gm->slider      = 0;
         $gm->price       = 49;
         $gm->save();
+
         // Metodo ORM
         $gm = new Game;
         $gm->name        = "Demon's Souls";

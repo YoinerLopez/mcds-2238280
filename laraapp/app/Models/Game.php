@@ -12,12 +12,14 @@ class Game extends Model
     protected $fillable = [
         'name',
         'image',
-        'description',//esta coma se puede dejar o quitar
+        'description',
         'user_id',
         'category_id',
         'slider',
-        'price',
+        'price'
+
     ];
+
     public function user() {
         return $this->belongsTo('App\Models\User');
     }
@@ -25,4 +27,5 @@ class Game extends Model
     public function category() {
         return $this->belongsTo('App\Models\Category');
     }
+
 }

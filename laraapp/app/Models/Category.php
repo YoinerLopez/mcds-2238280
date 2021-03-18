@@ -9,12 +9,15 @@ class Category extends Model
 {
     use HasFactory;
 
-        protected $fillable = [
+    protected $fillable = [
         'name',
         'image',
-        'description',//esta coma se puede dejar o quitar
+        'description'
+
     ];
-    public function games() {
+
+    public function games()
+    {
         return $this->hasMany('App\Models\Game');
     }
 }
