@@ -7,15 +7,15 @@
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="{{ url('home') }}"><i class="fas fa-clipboard-list"></i> Dashboard</a>
-                    </li>
-                    <li class="breadcrumb-item">
-                        <a href="{{ url('users') }}"><i class="fas fa-users"></i> Module Users</a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-user-plus"></i> Add User</li>
-                </ol>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{{ url('home') }}"><i class="fas fa-clipboard-list"></i> Dashboard</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{{ url('users') }}"><i class="fas fa-users"></i> Module Users</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-user-plus"></i> Add User</li>
+            </ol>
             </nav>
             <div class="card">
                 <div class="card-header text-uppercase text-center">

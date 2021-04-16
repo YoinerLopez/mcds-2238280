@@ -39,7 +39,7 @@
                         @endif
                     </div>
                 </div> --}}
-
+            
                 <div class="card-body">
                     <form method="POST" action="{{ url('users/'.$user->id) }}" enctype="multipart/form-data">
                         @csrf

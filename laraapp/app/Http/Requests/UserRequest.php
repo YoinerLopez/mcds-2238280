@@ -46,6 +46,7 @@ class UserRequest extends FormRequest
                 'password'  => 'required|min:4|confirmed',
             ];
         }
+        
     }
 
     public function messages() {
