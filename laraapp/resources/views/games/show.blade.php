@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Show Category')
+@section('title', 'Show Game')
 
 @section('content')
 <div class="container">
@@ -12,32 +12,40 @@
                     <a href="{{ url('home') }}"><i class="fas fa-clipboard-list"></i> Dashboard</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{{ url('categories') }}"><i class="fas fa-list-alt"></i> Module Categories</a>
+                    <a href="{{ url('games') }}"><i class="fas fa-list-alt"></i> Module Games</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-search"></i> Show Category</li>
+                <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-search"></i> Show Game</li>
             </ol>
             </nav>
             <div class="card">
                 <div class="card-header text-uppercase text-center">
                     <h5>
                         <i class="fa fa-search"></i> 
-                        Show Category
+                        Show Game
                     </h5>
                 </div>
                 <div class="card-body">
                     <table class="table table-hover table-striped">
                         <tr>
                             <td colspan="2" class="text-center">
-                                <img src="{{ asset($category->image) }}" width="180px" class="img-thumbnail rounded-circle">
+                                <img src="{{ asset($game->image) }}" width="180px" class="img-thumbnail rounded-circle">
                             </td>
                         </tr>
                         <tr>
                             <th>Name:</th>
-                            <td>{{ $category->name }}</td>
+                            <td>{{ $game->name }}</td>
                         </tr>
                         <tr>
                             <th>Description:</th>
-                            <td>{{ $category->description }}</td>
+                            <td>{{ $game->description }}</td>
+                        </tr>
+                        <tr>
+                            <th>Category:</th>
+                            <td> <a href="{{ url('categories/'.$game->category->id) }}">{{ $game->category->name }}</a> </td>
+                        </tr>
+                        <tr>
+                            <th>Price:</th>
+                            <td>{{ $game->price }}</td>
                         </tr>
                     </table>
                 </div>
